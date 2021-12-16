@@ -1,0 +1,108 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;700&display=swap');
+
+/***************
+variables
+**************/
+$fontFamily: 'Roboto', sans-serif;
+$fontSize: 16px;
+$white: #fff;
+$black: #000;
+$orange: #ff8a5b; /*rgb(255, 138, 91)*/
+$padding: 100px 0;
+$transition: 0.3s ease;
+
+/***************
+basic styles
+***************/
+* {
+    box-sizing: border-box;
+    padding: 0;
+    margin: 0;
+}
+body {
+    font-family: $fontFamily;
+    font-size: $fontSize;
+    line-height: 1.6;
+}
+.container {
+    width: 80%;
+    margin: 0 auto;
+}
+ul {
+    list-style: none;
+}
+a {
+    text-decoration: none;
+}
+
+/***************
+mixins
+***************/
+@mixin flex($justify, $align, $direction) {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: $justify;
+    align-items: $align;
+    flex-direction: $direction;
+}
+@mixin btn{
+    color: $white;
+    background: $orange;
+    border: none;
+    padding: 15px 30px;
+    font-size: 1.1rem;
+    border-radius: 5px;
+    $transition: $transition;
+}
+
+header {
+    background-image: linear-gradient(rgba(0, 0, 0, .3), rgba(0, 0, 0, .3)), url(img/header.jpg);
+    background-position: center;
+    background-size: cover;
+    height: 90vh;
+    color: $white;
+    nav {
+        @include flex(space-around, center, row);
+        padding: 50px 0;
+        .logo {
+            color: $white;
+            font-size: 1.5rem;
+            letter-spacing: 2px;
+            cursor: pointer;
+            &:hover {
+                color: tomato;
+                transition: $transition;
+            }
+        }
+        ul {
+            @include flex(space-between, center, row);
+            li {
+                margin-right: 30px;
+                a {
+                    font-size: 1.2rem;
+                    cursor: pointer;
+                    transition: $transition;
+                    text-transform: uppercase;
+                    &:hover {
+                        color: tomato;
+                        transition: $transition;
+                    }
+                }
+            }
+        }
+    }
+    div {
+        @include flex(center, center, column);
+        height: 60vh;
+        h1 {
+            font-size: 4rem;
+        }
+        h2 {
+            font-size: 2rem;
+            margin-bottom: 30px;
+        }
+        button {
+            @include btn;
+        }
+    }
+}

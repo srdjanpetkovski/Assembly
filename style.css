@@ -1,0 +1,106 @@
+@import url("https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;700&display=swap");
+/***************
+variables
+**************/
+/*rgb(255, 138, 91)*/
+/***************
+basic styles
+***************/
+* {
+  box-sizing: border-box;
+  padding: 0;
+  margin: 0;
+}
+
+body {
+  font-family: "Roboto", sans-serif;
+  font-size: 16px;
+  line-height: 1.6;
+}
+
+.container {
+  width: 80%;
+  margin: 0 auto;
+}
+
+ul {
+  list-style: none;
+}
+
+a {
+  text-decoration: none;
+}
+
+/***************
+mixins
+***************/
+header {
+  background-image: linear-gradient(rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.3)), url(img/header.jpg);
+  background-position: center;
+  background-size: cover;
+  height: 90vh;
+  color: #fff;
+}
+header nav {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-around;
+  align-items: center;
+  flex-direction: row;
+  padding: 50px 0;
+}
+header nav .logo {
+  color: #fff;
+  font-size: 1.5rem;
+  letter-spacing: 2px;
+  cursor: pointer;
+}
+header nav .logo:hover {
+  color: tomato;
+  transition: 0.3s ease;
+}
+header nav ul {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  align-items: center;
+  flex-direction: row;
+}
+header nav ul li {
+  margin-right: 30px;
+}
+header nav ul li a {
+  font-size: 1.2rem;
+  cursor: pointer;
+  transition: 0.3s ease;
+  text-transform: uppercase;
+}
+header nav ul li a:hover {
+  color: tomato;
+  transition: 0.3s ease;
+}
+header div {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  height: 60vh;
+}
+header div h1 {
+  font-size: 4rem;
+}
+header div h2 {
+  font-size: 2rem;
+  margin-bottom: 30px;
+}
+header div button {
+  color: #fff;
+  background: #ff8a5b;
+  border: none;
+  padding: 15px 30px;
+  font-size: 1.1rem;
+  border-radius: 5px;
+}
+
+/*# sourceMappingURL=style.css.map */
