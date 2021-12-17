@@ -10,6 +10,7 @@ $black: #000;
 $orange: #ff8a5b; /*rgb(255, 138, 91)*/
 $padding: 100px 0;
 $transition: 0.3s ease;
+$gray: gray;
 
 /***************
 basic styles
@@ -23,6 +24,7 @@ body {
     font-family: $fontFamily;
     font-size: $fontSize;
     line-height: 1.6;
+    color: $gray;
 }
 .container {
     width: 80%;
@@ -52,8 +54,17 @@ mixins
     padding: 15px 30px;
     font-size: 1.1rem;
     border-radius: 5px;
-    $transition: $transition;
+    transition: $transition;
+    cursor: pointer;
+    &:hover {
+        background: $white;
+        color: $black;
+    }
 }
+
+/***************
+header
+***************/
 
 header {
     background-image: linear-gradient(rgba(0, 0, 0, .3), rgba(0, 0, 0, .3)), url(img/header.jpg);
@@ -64,11 +75,17 @@ header {
     nav {
         @include flex(space-around, center, row);
         padding: 50px 0;
+        @media(max-width: 767px) {
+            @include flex(space-between, center, column);
+        }
         .logo {
             color: $white;
             font-size: 1.5rem;
             letter-spacing: 2px;
             cursor: pointer;
+            @media(max-width: 767px) {
+                margin-bottom: 20px;
+            }
             &:hover {
                 color: tomato;
                 transition: $transition;
@@ -96,6 +113,9 @@ header {
         height: 60vh;
         h1 {
             font-size: 4rem;
+            @media(max-width: 767px) {
+                font-size: 2.7rem;
+            }
         }
         h2 {
             font-size: 2rem;
@@ -105,4 +125,87 @@ header {
             @include btn;
         }
     }
+}
+
+/***************
+white
+***************/
+.white {
+    padding: $padding;
+    text-align: center;
+    h2 {
+        font-size: 2.3rem;
+        margin-bottom: 10px;
+        @media(max-width: 767px) {
+            font-size: 2rem;
+        }
+    }
+    h4 {
+        font-size: 1.2rem;
+        margin-bottom: 30px;
+    }
+    article {
+        @include flex(space-between, center, row);
+        div {
+            flex: 0 0 31%;
+            @media(max-width: 767px) {
+                flex: 0 0 100%;
+            }
+            button {
+                @include btn;
+                margin-top: 30px;
+                @media(max-width: 767px) {
+                    margin-bottom: 30px;
+                }
+            }
+        }
+    }
+}
+
+/***************
+tomato
+***************/
+.tomato {
+    background: tomato;
+    color: $white;
+    text-align: center;
+    padding: $padding;
+    article {
+        h2 {
+            font-size: 2.3rem;
+            margin-bottom: 10px;
+            @media(max-width: 767px) {
+                font-size: 2rem;
+            }
+        }
+        h4 {
+            font-size: 1.2rem;
+            margin-bottom: 30px;
+        }
+        button {
+            color: $white;
+            background: $gray;
+            border: none;
+            padding: 15px 30px;
+            font-size: 1.1rem;
+            border-radius: 5px;
+            transition: $transition;
+            margin-top: 30px;
+            cursor: pointer;
+            &:hover {
+                background: $white;
+                color: $black;
+            }
+        }
+    }
+}
+
+/***************
+footer
+***************/
+footer {
+    background: $gray;
+    color: $white;
+    text-align: center;
+    padding: 40px 0;
 }

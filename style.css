@@ -16,6 +16,7 @@ body {
   font-family: "Roboto", sans-serif;
   font-size: 16px;
   line-height: 1.6;
+  color: gray;
 }
 
 .container {
@@ -34,6 +35,9 @@ a {
 /***************
 mixins
 ***************/
+/***************
+header
+***************/
 header {
   background-image: linear-gradient(rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.3)), url(img/header.jpg);
   background-position: center;
@@ -49,11 +53,25 @@ header nav {
   flex-direction: row;
   padding: 50px 0;
 }
+@media (max-width: 767px) {
+  header nav {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    align-items: center;
+    flex-direction: column;
+  }
+}
 header nav .logo {
   color: #fff;
   font-size: 1.5rem;
   letter-spacing: 2px;
   cursor: pointer;
+}
+@media (max-width: 767px) {
+  header nav .logo {
+    margin-bottom: 20px;
+  }
 }
 header nav .logo:hover {
   color: tomato;
@@ -90,6 +108,11 @@ header div {
 header div h1 {
   font-size: 4rem;
 }
+@media (max-width: 767px) {
+  header div h1 {
+    font-size: 2.7rem;
+  }
+}
 header div h2 {
   font-size: 2rem;
   margin-bottom: 30px;
@@ -101,6 +124,116 @@ header div button {
   padding: 15px 30px;
   font-size: 1.1rem;
   border-radius: 5px;
+  transition: 0.3s ease;
+  cursor: pointer;
+}
+header div button:hover {
+  background: #fff;
+  color: #000;
+}
+
+/***************
+white
+***************/
+.white {
+  padding: 100px 0;
+  text-align: center;
+}
+.white h2 {
+  font-size: 2.3rem;
+  margin-bottom: 10px;
+}
+@media (max-width: 767px) {
+  .white h2 {
+    font-size: 2rem;
+  }
+}
+.white h4 {
+  font-size: 1.2rem;
+  margin-bottom: 30px;
+}
+.white article {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  align-items: center;
+  flex-direction: row;
+}
+.white article div {
+  flex: 0 0 31%;
+}
+@media (max-width: 767px) {
+  .white article div {
+    flex: 0 0 100%;
+  }
+}
+.white article div button {
+  color: #fff;
+  background: #ff8a5b;
+  border: none;
+  padding: 15px 30px;
+  font-size: 1.1rem;
+  border-radius: 5px;
+  transition: 0.3s ease;
+  cursor: pointer;
+  margin-top: 30px;
+}
+.white article div button:hover {
+  background: #fff;
+  color: #000;
+}
+@media (max-width: 767px) {
+  .white article div button {
+    margin-bottom: 30px;
+  }
+}
+
+/***************
+tomato
+***************/
+.tomato {
+  background: tomato;
+  color: #fff;
+  text-align: center;
+  padding: 100px 0;
+}
+.tomato article h2 {
+  font-size: 2.3rem;
+  margin-bottom: 10px;
+}
+@media (max-width: 767px) {
+  .tomato article h2 {
+    font-size: 2rem;
+  }
+}
+.tomato article h4 {
+  font-size: 1.2rem;
+  margin-bottom: 30px;
+}
+.tomato article button {
+  color: #fff;
+  background: gray;
+  border: none;
+  padding: 15px 30px;
+  font-size: 1.1rem;
+  border-radius: 5px;
+  transition: 0.3s ease;
+  margin-top: 30px;
+  cursor: pointer;
+}
+.tomato article button:hover {
+  background: #fff;
+  color: #000;
+}
+
+/***************
+footer
+***************/
+footer {
+  background: gray;
+  color: #fff;
+  text-align: center;
+  padding: 40px 0;
 }
 
 /*# sourceMappingURL=style.css.map */
